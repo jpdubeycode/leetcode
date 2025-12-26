@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void mergesort(int a[],int n,int b[],int m,int c[]){
+void mergearray(int a[],int n,int b[],int m,int c[]){
 
 int i=0,j=0,k=0;
 while(i<n&&j<m){
@@ -30,7 +30,7 @@ int b[]={3,5,9};
 int n,m;
 n=sizeof(a)/sizeof(a[0]);
 m=sizeof(b)/sizeof(b[0]);
-int c[8];
+int c[m+n];
 mergesort(a,n,b,m,c);
 
 }
