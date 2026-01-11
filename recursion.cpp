@@ -77,25 +77,68 @@
 
 
 
+// #include<iostream>
+// using namespace std;
+
+// bool isSorted(int a[],int num,int i){
+
+// if(i==num-1)
+// return true;
+
+// if(a[i]>a[i+1]){
+//     return false;
+// }
+
+// return isSorted(a,num,i+1);
+// }  
+
+
+// int main(){
+
+//   int a[5]={1,2,3,4,5};
+//   int b[5]={1,3,4,2,5};
+// cout<<isSorted(b,5,0);
+// }
+
+
 #include<iostream>
+#include<vector>
 using namespace std;
 
-bool isSorted(int a[],int num,int i){
+int FirstOcc(vector<int>&arr,int i,int target){
+  if(i==arr.size()){
+    return -1;
+  }
 
-if(i==num-1)
-return true;
-
-if(a[i]>a[i+1]){
-    return false;
+  if(arr[i]==target){
+    return i;
+  }
+  return FirstOcc(arr,i+1,target);
 }
 
-return isSorted(a,num,i+1);
-}  
+
+int LastOcc(vector<int>&arr,int i,int target){
+   
+  if(i==arr.size()){
+    return -1;
+  }
+ 
+  int foundindex=LastOcc(arr,i+1,target);
+
+  if(foundindex==-1 && arr[i]==target){
+    return i;
+  }
+
+  return foundindex;
+
+}
 
 
 int main(){
 
-  int a[5]={1,2,3,4,5};
-  int b[5]={1,3,4,2,5};
-cout<<isSorted(b,5,0);
+  vector<int>arr={1,2,3,3,4,5};
+  int target=3;
+  
+  //cout<<FirstOcc(arr,0,3);
+  cout<<LastOcc(arr,0,3);
 }
