@@ -29,11 +29,11 @@ bool isAnagram(string str1,string str2){
 
 int main(){
 
-// string str1="anagram";
-// string str2="nagaram";
+string str1="anagram";
+string str2="nagaram";
 
-string str1="cat";
-string str2="car";
+//string str1="cat";
+//string str2="car";
 isAnagram(str1,str2);
 
 
